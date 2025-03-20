@@ -2,7 +2,6 @@ package Hotel
 
 val senhaCorreta = 2678
 var nome: String = ""
-val quartos = MutableList(20) { true }
 
 fun main() {
     println("Informe o seu nome: ")
@@ -34,19 +33,6 @@ fun iniciar() {
     }
 }
 
-fun cadastrarQuartos() {
-    println("Qual o valor padrão da diária?")
-    var valor = readln().toDouble()
-    println("Quantas diárias serão necessárias?")
-    var dias = readln().toIntOrNull()
-    if (valor > 0) {
-        println("O valor de $dias dias será: " + (valor * dias!!))
-    } else {
-    }
-    println("Qual o nome do hóspede?")
-    val novoHospede = readln()
-
-}
 
 fun AbastecimentoDeAutomoveis() {
 
