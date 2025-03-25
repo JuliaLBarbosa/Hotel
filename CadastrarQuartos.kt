@@ -27,11 +27,11 @@ fun cadastrarQuartos() {
         }
     }
 }
-fun exibirQuartos () {
-    println("Lista de quartos e sua ocupações.")
+fun exibirQuartos() {
+    println("Lista completa de quartos:")
     quartos.forEachIndexed { index, ocupado ->
         val estado = if (ocupado) "ocupado" else "livre"
-        println("${index + 1} - $estado")
+        println("Quarto ${index + 1}: $estado")
         iniciar()
     }
 }
