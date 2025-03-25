@@ -3,19 +3,7 @@ package Hotel
 import kotlin.system.exitProcess
 
 fun cadastrarHospedes() {
-    var listaHospedes = mutableListOf(
-        "Carlos Villagran",
-        "Maria Antonieta de las Nieves",
-        "Roberto Gómez Bolaños",
-        "Florinda Meza",
-        "Ramón Valdés",
-        "Rubén Aguirre",
-        "Angelines Fernández",
-        "Edgar Vivar",
-        "Horácio Gómez Bolaños",
-        "Raúl Padilla"
-    )
-
+    var listaHospedes = mutableListOf<String>()
     while (true) {
         println("""Cadastro de Hóspedes
         Selecione uma opção:
@@ -35,13 +23,16 @@ fun cadastrarHospedes() {
 }
 
 fun cadastrarNovoHospede(listaHospedes: MutableList<String>) {
+    if (listaHospedes.size >= 15) {
+        println("Máximo de cadastros atingido.")
+        return
+    }
     println("Cadastro de Hóspedes.\nPor favor, informe o nome da Hóspede:")
     val novoHospede = readln()
     listaHospedes.add(novoHospede)
 
-    println("$novoHospede cadastrada com sucesso!")
+    println("Hospede $novoHospede foi cadastrada(o) com sucesso!")
     println("Lista de Hóspedes atuais " + listaHospedes)
-
     // Não é necessário chamar a função cadastrarHospedes(), pois o loop while já está chamando.
 }
 
@@ -52,12 +43,12 @@ fun pesquisarHospede(listaHospedes: MutableList<String>) {
     // Se o nome do hóspede estiver na lista, exibir o nome do hóspede.
     if (listaHospedes.any { it.contains(nomeHospede, ignoreCase = true) }) {
 
-        println("\nEncontramos a(s) hóspede(s):")
+        println("\n Hospede $nomeHospede foi encontrado")
         // filter irá filtrar a lista de hóspedes e exibir apenas os que contém o nome informado.
         listaHospedes.filter { it.contains(nomeHospede, ignoreCase = true) } // ignoreCase = true fará com que a busca não seja case sensitive.
             .forEach { println(it) } // forEach irá exibir cada hóspede encontrado.
     } else {
-        println("Não encontramos nenhuma hóspede com esse nome.")
+        println("Hóspede não encontrado.")
     }
 }
 
