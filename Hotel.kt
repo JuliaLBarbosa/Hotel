@@ -27,8 +27,9 @@ fun iniciar() {
     when (escolha) {
         1 -> cadastrarQuartos()
         2 -> cadastrarHospedes()
-        3 -> AbastecimentoDeAutomoveis()
-        4 -> sairDoHotelTransilvania()
+        3 -> cadastrarFamilia()
+        4 -> AbastecimentoDeAutomoveis()
+        5 -> sairDoHotelTransilvania()
         else -> erro()
     }
 }
